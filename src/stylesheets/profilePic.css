@@ -1,0 +1,17 @@
+.profilePic{
+     width: 68px;
+    position: absolute;
+    right: 53px;
+    top: 22px;
+    height: 66px;
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 107px;
+
+    
+}
+@media screen and (max-width: 885px) {
+  .profilePic{
+    display: none;
+  }
+}

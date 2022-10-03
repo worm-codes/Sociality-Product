@@ -1,0 +1,144 @@
+p {
+  font-family: Roboto, Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 50px;
+  background-color: #f5f7f8;
+  padding-right: 24px;
+}
+.datePosts{
+  margin-left:30px;
+  color:rgb(157 157 160);
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+}
+.content{
+    position: absolute;
+    padding-left: 265px;
+    padding-top:25px ;
+    width: 100%;
+}
+
+.statusSection{
+  
+  position: relative;
+  display: flex;
+  width: 460px;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+.status{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+.dot{
+  font-size: 40px;
+  margin-right: 6px;
+}
+.status-publish{
+  color:rgb(172,172,172)
+}
+.status-schedule{
+  color:rgb(58,193,131)
+}
+.status-approve{
+  color:rgb(247,191,56)
+}
+.status-error{
+  color:rgb(251,100,80)
+}
+.status-notes{
+  color:rgb(103,177,242)
+}
+
+.App{
+    display: flex;
+    
+}
+
+.contentPhoto{
+       width: 273px;
+    height: 206px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.items{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+.card{
+       flex-direction: row;
+    height: 394px;
+    width: 351px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.socialMediaButton{
+  width: 40px;
+  color:white;
+  height: 100%;
+  border:none;
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+
+.contentWithDate{
+  margin-top: 30px;
+}
+
+#firstContent{
+  margin-top: 7px;
+}
+
+
+.dateAndButtons{
+     display: flex;
+    justify-content: space-between;
+}
+
+.card-link{
+  text-decoration: none;
+  color: black;
+}
+
+.inside-date{
+  font-family: 'Rubik', sans-serif;
+  color: #c9bcbc;
+}
+
+.main-text{
+  font-family: 'Rubik', sans-serif;
+  font-weight: 800;
+  color: gray;
+}
+
+
+.buttonsNextToDate a{
+color: gray;
+}
+.buttonsNextToDate{
+      width: 78px;
+    display: flex;
+    justify-content: space-around;
+}
+.banButton:hover{
+  color: inherit;
+}
+.interactNumber{
+  margin-left: 5px;
+}
+.interactions{
+      --bs-link-hover-color: gray;
+}
