@@ -75,6 +75,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 
 }
 .card{
@@ -142,3 +143,4 @@ color: gray;
 .interactions{
       --bs-link-hover-color: gray;
 }
+

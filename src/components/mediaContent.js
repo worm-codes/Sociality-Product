@@ -9,19 +9,17 @@ const mediaContent = ({published_at,image,message,approved,is_published,socialMe
   return (
     
       <div className="card">
-   <a href="#">   <button style={{backgroundColor:conditionColor[0]}} className='socialMediaButton'>  <i class="fa-brands fa-twitter fa-lg"/></button></a>
+   <a href="#"><button style={{backgroundColor:conditionColor[0]}} className='socialMediaButton'>  <i class="fa-brands fa-twitter fa-lg"/></button></a>
    
-   <div style={{
-    display: "flex",
-    flexDirection: "column"}}>
+   <div style={{display: "flex",flexDirection: "column"}}>
  <div className="card-body">
 
   <div className="dateAndButtons">
      <p className="card-text inside-date">{is_published? published_at:updated_at}</p> 
     <div className="buttonsNextToDate">
-     <a className='banButton' href=""><i class="fa-solid fa-ban"></i></a>
-     <a className='trashButton' href=""><i class="fa-solid fa-trash-can"></i></a>
-     <a className='extraButton' href=""> <i class="fa-solid fa-ellipsis"></i> </a>
+     <a href='#' className='banButton' ><i class="fa-solid fa-ban"></i></a>
+     <a href='#' className='trashButton' ><i class="fa-solid fa-trash-can"></i></a>
+     <a href='#' className='extraButton' > <i class="fa-solid fa-ellipsis"></i> </a>
      </div>
     </div>
     

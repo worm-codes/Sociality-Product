@@ -1,4 +1,4 @@
-{
+export const datanew={
   "posts_by_date": {
     "2021-06-17": [
       {
