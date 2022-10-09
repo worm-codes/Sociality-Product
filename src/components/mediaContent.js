@@ -6,8 +6,8 @@ import '../stylesheets/App.css';
  
 
 const MediaContent = ({date,data}) => {
-  let conditionColor=['rgb(58,193,131)','rgb(247,191,56)','rgb(251,100,80)','rgb(172,172,172)','rgb(103,177,242)']
-            // schedule,approve,published,error
+  let conditionColor=['rgb(247,191,56)','rgb(58,193,131)','rgb(251,100,80)','rgb(172,172,172)','rgb(103,177,242)']
+            // approve,schedule,publishing,published,error
 
    let temp=data.published_at.split(' ')
    let time=temp[1].substr(0,5);
@@ -19,7 +19,7 @@ const MediaContent = ({date,data}) => {
   return (
     
       <div className="card">
-   <a target='_blank' href={data.link?data.link:'#'} rel="noreferrer"><button style={{backgroundColor:data.is_published? conditionColor[3]:conditionColor[data.status]}} className='socialMediaButton'>
+   <a target='_blank' href={data.link?data.link:'#'} rel="noreferrer"><button style={{backgroundColor:conditionColor[data.status]}} className='socialMediaButton'>
    <i className={`fa-brands fa-${data.account.channel==='instagrambusiness'?'instagram':data.account.channel} fa-lg`}/>
    </button></a>
    
