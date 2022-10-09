@@ -6,7 +6,8 @@ import './stylesheets/Header.css'
 import  './stylesheets/profilePic.css'
 import {data} from './helper/data'
 import {datanew} from './helper/datanew'
-import Media from './components/mediaContent'
+import Media from './components/MediaContent'
+import { computeHeadingLevel } from '@testing-library/react';
 
 
 const reducer=(sidebarSelect,action)=>{
@@ -152,7 +153,10 @@ function App() {
     postwithDate.push(postData[key])
     
   })
-  console.log(postwithDate);
+
+  let months=['January','February','March','April','May','June','July','August','September','October','November','December']
+  
+
 
 
   return (
@@ -190,7 +194,7 @@ function App() {
         <div>4</div>
       </div>
       
-     {sidebarSelect.display4 ==='block'?<div className='sidebarSelector'></div>:''}
+     {sidebarSelect.display5 ==='block'?<div className='sidebarSelector'></div>:''}
       <div style={sidebarSelect.display5==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN5CLOSEALL"})} className="sidebar-link">
         
         <div>5</div>
@@ -212,8 +216,8 @@ function App() {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i class="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>29</span>
-          {/* {extrasidebarSelect.display1==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>29</span>
+          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
         </div>
         
         </div>
@@ -229,7 +233,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
-          <i class="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i class="fa-solid fa-minus sign"></i> :<i class="fa-solid fa-plus sign"></i>}
+          <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
         </div>
@@ -245,7 +249,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display3==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN3CLOSEALL"})}>
-        <i class="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span> 
+        <i className="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
         </div>
         </div>
 
@@ -261,7 +265,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display4 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN4CLOSEALL"})}>
-          <i class="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -279,7 +283,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display5 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN5CLOSEALL"})}>
-          <i class="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -296,7 +300,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display6 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN6CLOSEALL"})}>
-          <i style={{marginRight:'10px'}} class="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i style={{marginRight:'10px'}} className="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -322,8 +326,8 @@ function App() {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i class="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>33</span>
-          {/* {extrasidebarSelect.display1==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>33</span>
+          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
         </div>
         
         </div>
@@ -339,7 +343,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
-          <i class="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i class="fa-solid fa-minus sign"></i> :<i class="fa-solid fa-plus sign"></i>}
+          <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
         </div>
@@ -355,7 +359,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display3==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN3CLOSEALL"})}>
-        <i class="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span> 
+        <i className="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
         </div>
         </div>
 
@@ -371,7 +375,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display4 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN4CLOSEALL"})}>
-          <i class="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -389,7 +393,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display5 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN5CLOSEALL"})}>
-          <i class="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -406,7 +410,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display6 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN6CLOSEALL"})}>
-          <i style={{marginRight:'10px'}} class="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i style={{marginRight:'10px'}} className="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -426,8 +430,8 @@ function App() {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i class="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>11</span>
-          {/* {extrasidebarSelect.display1==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>11</span>
+          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
         </div>
         
         </div>
@@ -443,7 +447,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
-          <i class="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i class="fa-solid fa-minus sign"></i> :<i class="fa-solid fa-plus sign"></i>}
+          <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
         </div>
@@ -459,7 +463,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display3==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN3CLOSEALL"})}>
-        <i class="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span> 
+        <i className="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
         </div>
         </div>
 
@@ -475,7 +479,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display4 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN4CLOSEALL"})}>
-          <i class="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -493,7 +497,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display5 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN5CLOSEALL"})}>
-          <i class="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -510,7 +514,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display6 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN6CLOSEALL"})}>
-          <i style={{marginRight:'10px'}} class="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i style={{marginRight:'10px'}} className="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -530,8 +534,8 @@ function App() {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i class="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>21</span>
-          {/* {extrasidebarSelect.display1==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>21</span>
+          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
         </div>
         
         </div>
@@ -547,7 +551,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
-          <i class="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i class="fa-solid fa-minus sign"></i> :<i class="fa-solid fa-plus sign"></i>}
+          <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
         </div>
@@ -563,7 +567,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display3==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN3CLOSEALL"})}>
-        <i class="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span> 
+        <i className="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
         </div>
         </div>
 
@@ -579,7 +583,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display4 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN4CLOSEALL"})}>
-          <i class="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -597,7 +601,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display5 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN5CLOSEALL"})}>
-          <i class="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -614,7 +618,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display6 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN6CLOSEALL"})}>
-          <i style={{marginRight:'10px'}} class="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i style={{marginRight:'10px'}} className="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -637,8 +641,8 @@ function App() {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i class="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>17</span>
-          {/* {extrasidebarSelect.display1==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>17</span>
+          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
         </div>
         
         </div>
@@ -654,7 +658,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
-          <i class="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i class="fa-solid fa-minus sign"></i> :<i class="fa-solid fa-plus sign"></i>}
+          <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
         </div>
@@ -670,7 +674,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display3==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN3CLOSEALL"})}>
-        <i class="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span> 
+        <i className="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
         </div>
         </div>
 
@@ -686,7 +690,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display4 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN4CLOSEALL"})}>
-          <i class="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -704,7 +708,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display5 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN5CLOSEALL"})}>
-          <i class="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -721,7 +725,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display6 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN6CLOSEALL"})}>
-          <i style={{marginRight:'10px'}} class="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i style={{marginRight:'10px'}} className="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -742,8 +746,8 @@ function App() {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i class="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>8</span>
-          {/* {extrasidebarSelect.display1==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>8</span>
+          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
         </div>
         
         </div>
@@ -759,7 +763,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
-          <i class="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i class="fa-solid fa-minus sign"></i> :<i class="fa-solid fa-plus sign"></i>}
+          <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
         </div>
@@ -775,7 +779,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display3==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN3CLOSEALL"})}>
-        <i class="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span> 
+        <i className="fa-regular fa-pen-to-square me-2"></i><p style={{marginRight:'10px'}}>PUBLISH </p><span className='sign'>{extrasidebarSelect.display3==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
         </div>
         </div>
 
@@ -791,7 +795,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display4 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN4CLOSEALL"})}>
-          <i class="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-regular fa-comment me-2"></i><p style={{marginRight:'11px'}}>ENGAGE </p><span className='sign'>{extrasidebarSelect.display4==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -809,7 +813,7 @@ function App() {
         <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display5 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN5CLOSEALL"})}>
-          <i class="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i className="fa-solid fa-wave-square me-2"></i><p style={{marginRight:'18px'}}>LISTEN </p><span className='sign'>{extrasidebarSelect.display5==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -826,7 +830,7 @@ function App() {
          <div className="extrasidebar-link">
         <div className={`extraLink ${ extrasidebarSelect.display6 ==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN6CLOSEALL"})}>
-          <i style={{marginRight:'10px'}} class="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i class="fa-solid fa-minus "></i> :<i class="fa-solid fa-plus "></i>}</span>
+          <i style={{marginRight:'10px'}} className="fa-regular fa-file "></i><p style={{marginRight:'11px'}}>REPORT </p><span className='sign'>{extrasidebarSelect.display6==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span>
         </div>
         </div>
 
@@ -858,92 +862,32 @@ function App() {
     
    {/* bu kisim for dongusunde olucak her tarih icindekini media compinentinde basicaz */}
    {/* 0. index ise kosulu yaz id='firstContent'  */}
-    <div  className='contentWithDate'>
- <div className='datePosts'>14 January 2016</div> 
-    <div className="items">
 
-    <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='twitter' link='#'
-     />
-     <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
-     />
-     <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
-     />
-     <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
-     />
+     {postwithDate.map((element,idx)=>{
+      let date=Object.keys(postData)[idx].split('-')
+      let day=date[2];
+      let year=date[0];
+      let monthTemp= date[1].includes('0')?date[1].split('0'):date[1];
+      let month=months[parseInt(monthTemp[1])]
 
-
-      
-
-   
-
+      let dateToSend=`${day} ${month} ${year}`
     
 
-
-   
-
-    </div>
-
-    </div>
-
-
-     <div  className='contentWithDate'>
- <div style={{marginLeft:'30px'}}>date</div> 
+      return<div  className='contentWithDate'>
+ <div className='datePosts'>{dateToSend}</div> 
     <div className="items">
-
-    <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
+    { 
+      postwithDate[idx].map((insideElement)=>{
+      return <Media data={insideElement} date={dateToSend}
      />
-     <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
-     />
-     <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
-     />
-     <Media published_at='11 January 2016'
- upadted_at='15 January 2017'
-  image='https://www.w3schools.com/howto/img_avatar.png'
-   message="Some quick example text to build on the card title and make up the bulk of the card's content" approved={true} is_published={true}
-   socialMedia='facebook' link='#'
-     />
-
-
-      
-
-   
-
-    
-
-
-   
-
+    })}
     </div>
-
     </div>
+   
+     
+    })}
+   
+  
 
   
       </div>

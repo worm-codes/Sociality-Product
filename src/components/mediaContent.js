@@ -1,43 +1,54 @@
 import React from 'react'
+import { useState } from 'react';
 import '../stylesheets/App.css';
 
  
 
-const mediaContent = ({published_at,image,message,approved,is_published,socialMedia,link,updated_at}) => {
-  let conditionColor=['rgb(172,172,172)','rgb(58,193,131)','rgb(247,191,56)','rgb(251,100,80)','rgb(103,177,242)']
-            // published,schedule,approve,error,notes colors
+const mediaContent = ({date,data}) => {
+  let conditionColor=['rgb(58,193,131)','rgb(247,191,56)','rgb(251,100,80)','rgb(172,172,172)','rgb(103,177,242)']
+            // schedule,approve,published,error
+  
+   let temp=data.published_at.split(' ')
+   let time=temp[1].substr(0,5);
+   
+   
+  
   return (
     
       <div className="card">
-   <a href="#"><button style={{backgroundColor:conditionColor[0]}} className='socialMediaButton'>  <i class="fa-brands fa-twitter fa-lg"/></button></a>
+   <a href={data.link}><button style={{backgroundColor:data.is_published? conditionColor[3]:conditionColor[data.status]}} className='socialMediaButton'>
+   <i className={`fa-brands fa-${data.account.channel==='instagrambusiness'?'instagram':data.account.channel} fa-lg`}/>
+   </button></a>
    
    <div style={{display: "flex",flexDirection: "column"}}>
  <div className="card-body">
 
   <div className="dateAndButtons">
-     <p className="card-text inside-date">{is_published? published_at:updated_at}</p> 
+     <p className="card-text inside-date">{`${date} ${time}`}</p> 
     <div className="buttonsNextToDate">
-     <a href='#' className='banButton' ><i class="fa-solid fa-ban"></i></a>
-     <a href='#' className='trashButton' ><i class="fa-solid fa-trash-can"></i></a>
-     <a href='#' className='extraButton' > <i class="fa-solid fa-ellipsis"></i> </a>
+     {!data.is_published ?<a href='#' ><i className={`fa-solid fa-${data.status===1?'check':'ban'}`}></i></a>:''}
+     <a href='#' className='trashButton' ><i className="fa-solid fa-trash-can"></i></a>
+     <a href='#' className='extraButton' > <i className="fa-solid fa-ellipsis"></i> </a>
      </div>
     </div>
     
-    <p className="card-text main-text">{message}</p>
+    <p className="card-text main-text">{data.entry.message}</p>
  </div>
     
-  <img className='contentPhoto text-center card-img-top' 
-  src={image}
+      <img width='273px' className='contentPhoto  ' 
+  src={data.entry.image}
    alt="..."/>
+    
+  
 
  
   <div className="card-body">
   <div className='interactions'>
 
-    <a href="#" className="card-link"><i class="fa-regular fa-thumbs-up fa-lg"></i> <span className='interactNumber'>0</span></a>
-    <a href="#" className="card-link">{socialMedia!=='twitter'?<i class="fa-regular fa-message"></i>:<i class="fa-solid fa-retweet"></i>}  <span className='interactNumber'>3</span></a>
-  <a href="#" className="card-link">{socialMedia==='twitter'?<i class="fa-regular fa-message"></i>:<i class="fa-solid fa-share-nodes"></i>}  <span className='interactNumber'>5</span></a>
-    <a href="#" className="card-link"><i class="fa-solid fa-eye"></i>  <span className='interactNumber'>11</span></a>
+    <a href="#" className="card-link"><i className="fa-regular fa-thumbs-up fa-lg"></i> <span className='interactNumber'>{data.is_published?'3':'0'}</span></a>
+    <a href="#" className="card-link">{data.account.channel!=='twitter'?<i className="fa-regular fa-message"></i>:<i className="fa-solid fa-retweet"></i>}  <span className='interactNumber'>{data.is_published?'7':'0'}</span></a>
+  <a href="#" className="card-link">{data.account.channel==='twitter'?<i className="fa-regular fa-message"></i>:<i className="fa-solid fa-share-nodes"></i>}  <span className='interactNumber'>{data.is_published?'9':'0'}</span></a>
+    <a href="#" className="card-link"><i className="fa-solid fa-eye"></i>  <span className='interactNumber'>{data.is_published?'9':'0'}</span></a>
   </div>
   
   </div>
