@@ -143,34 +143,52 @@ const SideBar = () => {
         {sidebarSelect.display1 ==='block'?<div className='sidebarSelector'></div>:''}
       <div   style={sidebarSelect.display1 ==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN1CLOSEALL"})} className="sidebar-link">
         
-        <div>1</div>
+        <div className='company'>
+        <div className="notificationRoundedNumber">29</div>
+        <img src="https://pbs.twimg.com/profile_images/921330742478753794/coeGcsnq_400x400.jpg" alt="account image" />
+        </div>
       </div>
       {sidebarSelect.display2 ==='block'?<div className='sidebarSelector'></div>:''}
       <div style={sidebarSelect.display2==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN2CLOSEALL"})} className="sidebar-link">
        
-        <div>2</div>
+         <div className='company'>
+        <div className="notificationRoundedNumber">33</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/49/49482.png" alt="account image" />
+        </div>
       </div>
       {sidebarSelect.display3 ==='block'?<div className='sidebarSelector'></div>:''}
       <div style={sidebarSelect.display3==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN3CLOSEALL"})} className="sidebar-link">
         
-        <div>3</div>
+         <div className='company'>
+        <div className="notificationRoundedNumber">11</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/49/49416.png" alt="account image" />
+        </div>
       </div>
       {sidebarSelect.display4 ==='block'?<div className='sidebarSelector'></div>:''}
       <div  style={sidebarSelect.display4==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN4CLOSEALL"})} className="sidebar-link">
       
-        <div>4</div>
+         <div className='company'>
+        <div className="notificationRoundedNumber">21</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/5448/5448104.png" alt="account image" />
+        </div>
       </div>
       
      {sidebarSelect.display5 ==='block'?<div className='sidebarSelector'></div>:''}
       <div style={sidebarSelect.display5==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN5CLOSEALL"})} className="sidebar-link">
         
-        <div>5</div>
+         <div className='company'>
+        <div className="notificationRoundedNumber">17</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/731/731983.png" alt="account image" />
+        </div>
       </div>
 
        {sidebarSelect.display6 ==='block'?<div className='sidebarSelector'></div>:''}
       <div style={sidebarSelect.display6==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN6CLOSEALL"})} className="sidebar-link">
         
-        <div>6</div>
+         <div className='company'>
+        <div className="notificationRoundedNumber">8</div>
+        <img src="https://cdn-icons-png.flaticon.com/512/512/512211.png" alt="account image" />
+        </div>
       </div>
      
       
@@ -184,7 +202,7 @@ const SideBar = () => {
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
           <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>29</span>
-          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
+         
         </div>
         
         </div>
@@ -208,7 +226,7 @@ const SideBar = () => {
          <div style={{display:extrasidebarSelect.display2}}>
          <ul>
           <li style={{color:active.select3}} onClick={()=>activeDispatch({type:"RED3WHITEALL"})}>Graph Summary</li>
-          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>23223</li>
+          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>Daily Summary</li>
         </ul>
 
         </div>
@@ -222,8 +240,8 @@ const SideBar = () => {
 
          <div style={{display:extrasidebarSelect.display3}}>
          <ul>
-          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>23223</li>
-          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>23223</li>
+          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>Compose</li>
+          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>Feed</li>
         </ul>
 
         </div>
@@ -238,8 +256,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display4}}>
         <ul>
-          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>23223</li>
-          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>23223</li>
+          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>Bind</li>
+          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>Social</li>
         </ul>
      
        
@@ -256,8 +274,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display5}}>
         <ul>
-          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>23223</li>
-          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>23223</li>
+          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>Data</li>
+          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>User</li>
         </ul>
      
         </div>
@@ -273,8 +291,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display6}}>
         <ul>
-          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>23223</li>
-          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>23223</li>
+          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>Daily Report</li>
+          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>Monthly Report</li>
         </ul>
      
         </div>
@@ -318,7 +336,7 @@ const SideBar = () => {
          <div style={{display:extrasidebarSelect.display2}}>
          <ul>
           <li style={{color:active.select3}} onClick={()=>activeDispatch({type:"RED3WHITEALL"})}>Graph Summary</li>
-          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>23223</li>
+          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>Daily Summary</li>
         </ul>
 
         </div>
@@ -332,8 +350,8 @@ const SideBar = () => {
 
          <div style={{display:extrasidebarSelect.display3}}>
          <ul>
-          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>23223</li>
-          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>23223</li>
+          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>Compose</li>
+          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>Feed</li>
         </ul>
 
         </div>
@@ -348,8 +366,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display4}}>
         <ul>
-          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>23223</li>
-          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>23223</li>
+          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>Bind</li>
+          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>Social</li>
         </ul>
      
        
@@ -366,8 +384,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display5}}>
         <ul>
-          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>23223</li>
-          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>23223</li>
+          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>Data</li>
+          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>User</li>
         </ul>
      
         </div>
@@ -383,8 +401,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display6}}>
         <ul>
-          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>23223</li>
-          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>23223</li>
+          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>Daily Report</li>
+          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>Monthly Report</li>
         </ul>
      
         </div>
@@ -422,7 +440,7 @@ const SideBar = () => {
          <div style={{display:extrasidebarSelect.display2}}>
          <ul>
           <li style={{color:active.select3}} onClick={()=>activeDispatch({type:"RED3WHITEALL"})}>Graph Summary</li>
-          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>23223</li>
+          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>Daily Summary</li>
         </ul>
 
         </div>
@@ -436,8 +454,8 @@ const SideBar = () => {
 
          <div style={{display:extrasidebarSelect.display3}}>
          <ul>
-          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>23223</li>
-          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>23223</li>
+          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>Compose</li>
+          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>Feed</li>
         </ul>
 
         </div>
@@ -452,8 +470,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display4}}>
         <ul>
-          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>23223</li>
-          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>23223</li>
+          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>Bind</li>
+          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>Social</li>
         </ul>
      
        
@@ -470,8 +488,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display5}}>
         <ul>
-          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>23223</li>
-          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>23223</li>
+          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>Data</li>
+          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>User</li>
         </ul>
      
         </div>
@@ -487,8 +505,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display6}}>
         <ul>
-          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>23223</li>
-          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>23223</li>
+          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>Daily Report</li>
+          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>Monthly Report</li>
         </ul>
      
         </div>
@@ -526,7 +544,7 @@ const SideBar = () => {
          <div style={{display:extrasidebarSelect.display2}}>
          <ul>
           <li style={{color:active.select3}} onClick={()=>activeDispatch({type:"RED3WHITEALL"})}>Graph Summary</li>
-          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>23223</li>
+          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>Daily Summary</li>
         </ul>
 
         </div>
@@ -540,8 +558,8 @@ const SideBar = () => {
 
          <div style={{display:extrasidebarSelect.display3}}>
          <ul>
-          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>23223</li>
-          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>23223</li>
+          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>Compose</li>
+          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>Feed</li>
         </ul>
 
         </div>
@@ -556,8 +574,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display4}}>
         <ul>
-          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>23223</li>
-          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>23223</li>
+          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>Bind</li>
+          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>Social</li>
         </ul>
      
        
@@ -574,8 +592,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display5}}>
         <ul>
-          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>23223</li>
-          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>23223</li>
+          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>Data</li>
+          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>User</li>
         </ul>
      
         </div>
@@ -591,8 +609,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display6}}>
         <ul>
-          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>23223</li>
-          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>23223</li>
+          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>Daily Report</li>
+          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>Monthly Report</li>
         </ul>
      
         </div>
@@ -738,7 +756,7 @@ const SideBar = () => {
          <div style={{display:extrasidebarSelect.display2}}>
          <ul>
           <li style={{color:active.select3}} onClick={()=>activeDispatch({type:"RED3WHITEALL"})}>Graph Summary</li>
-          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>23223</li>
+          <li style={{color:active.select4}} onClick={()=>activeDispatch({type:"RED4WHITEALL"})}>Daily Summary</li>
         </ul>
 
         </div>
@@ -752,8 +770,8 @@ const SideBar = () => {
 
          <div style={{display:extrasidebarSelect.display3}}>
          <ul>
-          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>23223</li>
-          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>23223</li>
+          <li style={{color:active.select5}} onClick={()=>activeDispatch({type:"RED5WHITEALL"})}>Compose</li>
+          <li style={{color:active.select6}} onClick={()=>activeDispatch({type:"RED6WHITEALL"})}>Feed</li>
         </ul>
 
         </div>
@@ -768,8 +786,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display4}}>
         <ul>
-          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>23223</li>
-          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>23223</li>
+          <li style={{color:active.select7}} onClick={()=>activeDispatch({type:"RED7WHITEALL"})}>Bind</li>
+          <li style={{color:active.select8}} onClick={()=>activeDispatch({type:"RED8WHITEALL"})}>Social</li>
         </ul>
      
        
@@ -786,8 +804,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display5}}>
         <ul>
-          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>23223</li>
-          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>23223</li>
+          <li style={{color:active.select9}} onClick={()=>activeDispatch({type:"RED9WHITEALL"})}>Data</li>
+          <li style={{color:active.select10}} onClick={()=>activeDispatch({type:"RED10WHITEALL"})}>User</li>
         </ul>
      
         </div>
@@ -803,8 +821,8 @@ const SideBar = () => {
 
         <div style={{display:extrasidebarSelect.display6}}>
         <ul>
-          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>23223</li>
-          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>23223</li>
+          <li style={{color:active.select11}} onClick={()=>activeDispatch({type:"RED11WHITEALL"})}>Daily Report</li>
+          <li style={{color:active.select12}} onClick={()=>activeDispatch({type:"RED12WHITEALL"})}>Monthly Report</li>
         </ul>
      
         </div>

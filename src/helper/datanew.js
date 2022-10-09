@@ -9,7 +9,7 @@ export const datanew={
           "type": "photo",
           "message": "Lorem ipsum dolor sit amet, consecteturat\r\n adipiscing elit, sed do eiusmod tempor \r\nincididunt? http://bit.ly/145HD7S ",
           "image": [
-            "https://s3-eu-west-1.amazonaws.com/a6apptest/public/files/58bab4018803fa0008413733_0A0szw7OSDIVt2rq80.jpeg"
+            "https://s3-eu-west-1.amazonaws.com/a6apptest/public/files/58bab486274592018803fa0008413733_0A0szw7OSDIVt2rq80.jpeg"
           ],
           "video": null
         },

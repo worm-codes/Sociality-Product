@@ -27,8 +27,8 @@
 
 
 .sidebar-link img {
-    height: 24px;
-    margin-bottom: 4px;
+    height: 36px;
+    border-radius: 10px;
 }
 
 .sidebar-link div {
@@ -124,4 +124,21 @@ li{
     margin-left: 39px;
     margin-right: 12px;
     color: black;
+}
+
+.notificationRoundedNumber{
+        position: absolute;
+    background-color: rgb(75,198,176);
+    color: white;
+    height: 18px;
+    right: -7px;
+    top: -4px;
+    width: 18px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.company{
+    position: relative;
 }

@@ -2,21 +2,24 @@ import React from 'react'
 import { useState } from 'react';
 import '../stylesheets/App.css';
 
+
  
 
-const mediaContent = ({date,data}) => {
+const MediaContent = ({date,data}) => {
   let conditionColor=['rgb(58,193,131)','rgb(247,191,56)','rgb(251,100,80)','rgb(172,172,172)','rgb(103,177,242)']
             // schedule,approve,published,error
-  
+
    let temp=data.published_at.split(' ')
    let time=temp[1].substr(0,5);
+
+  const [image,setImage]=useState(data.entry.image)
    
    
   
   return (
     
       <div className="card">
-   <a href={data.link}><button style={{backgroundColor:data.is_published? conditionColor[3]:conditionColor[data.status]}} className='socialMediaButton'>
+   <a target='_blank' href={data.link?data.link:'#'} rel="noreferrer"><button style={{backgroundColor:data.is_published? conditionColor[3]:conditionColor[data.status]}} className='socialMediaButton'>
    <i className={`fa-brands fa-${data.account.channel==='instagrambusiness'?'instagram':data.account.channel} fa-lg`}/>
    </button></a>
    
@@ -35,11 +38,15 @@ const mediaContent = ({date,data}) => {
     <p className="card-text main-text">{data.entry.message}</p>
  </div>
     
-      <img width='273px' className='contentPhoto  ' 
-  src={data.entry.image}
-   alt="..."/>
-    
-  
+      <img width='273px' className='contentPhoto'
+  src={image}
+   alt="..."
+   onError={()=>{
+   setImage('https://i.ibb.co/wRBnsXs/no-post-image.png')
+   }}
+   
+   />
+
 
  
   <div className="card-body">
@@ -57,4 +64,4 @@ const mediaContent = ({date,data}) => {
   )
 }
 
-export default mediaContent
+export default MediaContent
