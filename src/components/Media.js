@@ -1,11 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import '../stylesheets/App.css';
-
-
- 
-
-const MediaContent = ({date,data}) => {
+const Media = ({data,date}) => {
   let conditionColor=['rgb(247,191,56)','rgb(58,193,131)','rgb(251,100,80)','rgb(172,172,172)','rgb(103,177,242)']
             // approve,schedule,publishing,published,error
 
@@ -64,4 +60,4 @@ const MediaContent = ({date,data}) => {
   )
 }
 
-export default MediaContent
+export default Media

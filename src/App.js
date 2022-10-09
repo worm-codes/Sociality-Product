@@ -4,7 +4,7 @@ import './stylesheets/sidebar.css'
 import './stylesheets/Header.css'
 import  './stylesheets/profilePic.css'
 import {datanew} from './helper/datanew'
-import Media from './components/MediaContent'
+import Media from './components/Media'
 import SideBar from './components/SideBar';
 
 
