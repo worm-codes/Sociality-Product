@@ -152,7 +152,7 @@ const SideBar = () => {
       <div style={sidebarSelect.display2==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN2CLOSEALL"})} className="sidebar-link">
        
          <div className='company'>
-        <div className="notificationRoundedNumber">33</div>
+       
         <img src="https://cdn-icons-png.flaticon.com/512/49/49482.png" alt="account image" />
         </div>
       </div>
@@ -311,16 +311,16 @@ const SideBar = () => {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>33</span>
-          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText me-4'>NOTIFICATIONS </p>
+   
         </div>
         
         </div>
 
            <div style={{display:extrasidebarSelect.display1}}>
          <ul>
-          <li style={{color:active.select1}} onClick={()=>activeDispatch({type:"RED1WHITEALL"})}><span className='moreMenu'>Facebook 13</span></li>
-          <li style={{color:active.select2}} onClick={()=>activeDispatch({type:"RED2WHITEALL"})}><span className='moreMenu'>Twitter 20</span></li>
+          <li style={{color:active.select1}} onClick={()=>activeDispatch({type:"RED1WHITEALL"})}><span className='moreMenu'>Facebook 0</span></li>
+          <li style={{color:active.select2}} onClick={()=>activeDispatch({type:"RED2WHITEALL"})}><span className='moreMenu'>Twitter 0</span></li>
         </ul>
 
         </div>
