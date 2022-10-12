@@ -51,6 +51,7 @@ li{
 .notificationNumber{
     border: 1px solid green;
     border-radius: 27%;
+    width: 1.5rem;
      margin-left: 5px;
     font-size: 10px;
     padding: 0px 5px 0px 5px;

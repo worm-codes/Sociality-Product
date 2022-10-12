@@ -159,7 +159,6 @@ const SideBar = () => {
      {sidebarSelect.display2 ==='block'?<SidebarSelector/>:''}
      <SidebarLink display={sidebarSelect.display2==='block'} onClick={()=>dispatch({type:"OPEN2CLOSEALL"})}>
         <div className='company'>
-       
         <img src="https://cdn-icons-png.flaticon.com/512/49/49482.png" alt="account image" />
         </div>
      </SidebarLink>
@@ -325,7 +324,7 @@ const SideBar = () => {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span style={{margin:'0 10px'}}>{extrasidebarSelect.display1==='block'?  <i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span style={{border:'none'}} className='notificationNumber'></span> 
    
         </div>
         
@@ -747,7 +746,7 @@ const SideBar = () => {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>8</span>
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p> <span className='notificationNumber'>8</span>
         
         </div>
         
