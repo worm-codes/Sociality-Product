@@ -1,4 +1,10 @@
 import React,{useReducer} from 'react'
+import { Sidebar } from './styles/Sidebar/Sidebar.styled'
+import { SidebarSelector } from './styles/Sidebar/SidebarSelector.styled'
+import { SidebarLink } from './styles/Sidebar/SidebarLink.styled'
+import { NotificationRoundedNumber } from './styles/Sidebar/NotificationRoundedNumber.styled'
+import { ExtraSidebar } from './styles/ExtraSidebar/ExtraSidebar.styled'
+
 
 const reducer=(sidebarSelect,action)=>{
   switch (action.type) {
@@ -136,67 +142,72 @@ const SideBar = () => {
    const [active,activeDispatch]=useReducer(activeReducer,{select1:'white',select2:'white',select3:'white',select4:'white'
   ,select5:'white',select6:'white',select7:'white',select8:'white',select9:'white',select10:'white',select11:'white',select12:'white'})
 
-
   return (
-    <div> <div className="sidebar">
-     
-        {sidebarSelect.display1 ==='block'?<div className='sidebarSelector'></div>:''}
-      <div   style={sidebarSelect.display1 ==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN1CLOSEALL"})} className="sidebar-link">
-        
+
+    
+    <div> 
+
+    <Sidebar>
+     {sidebarSelect.display1 ==='block'?<SidebarSelector/>:''}
+     <SidebarLink display={sidebarSelect.display1==='block'} onClick={()=>dispatch({type:"OPEN1CLOSEALL"})}>
         <div className='company'>
-        <div className="notificationRoundedNumber">29</div>
+        <NotificationRoundedNumber>29</NotificationRoundedNumber>
         <img src="https://pbs.twimg.com/profile_images/921330742478753794/coeGcsnq_400x400.jpg" alt="account image" />
         </div>
-      </div>
-      {sidebarSelect.display2 ==='block'?<div className='sidebarSelector'></div>:''}
-      <div style={sidebarSelect.display2==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN2CLOSEALL"})} className="sidebar-link">
-       
-         <div className='company'>
+     </SidebarLink>
+
+     {sidebarSelect.display2 ==='block'?<SidebarSelector/>:''}
+     <SidebarLink display={sidebarSelect.display2==='block'} onClick={()=>dispatch({type:"OPEN2CLOSEALL"})}>
+        <div className='company'>
        
         <img src="https://cdn-icons-png.flaticon.com/512/49/49482.png" alt="account image" />
         </div>
-      </div>
-      {sidebarSelect.display3 ==='block'?<div className='sidebarSelector'></div>:''}
-      <div style={sidebarSelect.display3==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN3CLOSEALL"})} className="sidebar-link">
-        
-         <div className='company'>
-        <div className="notificationRoundedNumber">11</div>
+     </SidebarLink>
+
+
+     {sidebarSelect.display3 ==='block'?<SidebarSelector/>:''}
+     <SidebarLink display={sidebarSelect.display3==='block'} onClick={()=>dispatch({type:"OPEN3CLOSEALL"})}>
+        <div className='company'>
+        <NotificationRoundedNumber>11</NotificationRoundedNumber>
         <img src="https://cdn-icons-png.flaticon.com/512/49/49416.png" alt="account image" />
         </div>
-      </div>
-      {sidebarSelect.display4 ==='block'?<div className='sidebarSelector'></div>:''}
-      <div  style={sidebarSelect.display4==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN4CLOSEALL"})} className="sidebar-link">
-      
-         <div className='company'>
-        <div className="notificationRoundedNumber">21</div>
+     </SidebarLink>
+
+
+      {sidebarSelect.display4 ==='block'?<SidebarSelector/>:''}
+     <SidebarLink display={sidebarSelect.display4==='block'} onClick={()=>dispatch({type:"OPEN4CLOSEALL"})}>
+        <div className='company'>
+        <NotificationRoundedNumber>21</NotificationRoundedNumber>
         <img src="https://cdn-icons-png.flaticon.com/512/5448/5448104.png" alt="account image" />
         </div>
-      </div>
-      
-     {sidebarSelect.display5 ==='block'?<div className='sidebarSelector'></div>:''}
-      <div style={sidebarSelect.display5==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN5CLOSEALL"})} className="sidebar-link">
-        
-         <div className='company'>
-        <div className="notificationRoundedNumber">17</div>
+     </SidebarLink>
+
+     
+  {sidebarSelect.display5 ==='block'?<SidebarSelector/>:''}
+     <SidebarLink display={sidebarSelect.display5==='block'} onClick={()=>dispatch({type:"OPEN5CLOSEALL"})}>
+        <div className='company'>
+        <NotificationRoundedNumber>17</NotificationRoundedNumber>
         <img src="https://cdn-icons-png.flaticon.com/512/731/731983.png" alt="account image" />
         </div>
-      </div>
+     </SidebarLink>
+     
 
-       {sidebarSelect.display6 ==='block'?<div className='sidebarSelector'></div>:''}
-      <div style={sidebarSelect.display6==='block'?{opacity:'1',color:'black'}:{}} onClick={()=>dispatch({type:"OPEN6CLOSEALL"})} className="sidebar-link">
-        
-         <div className='company'>
-        <div className="notificationRoundedNumber">8</div>
+     {sidebarSelect.display6 ==='block'?<SidebarSelector/>:''}
+     <SidebarLink display={sidebarSelect.display6==='block'} onClick={()=>dispatch({type:"OPEN6CLOSEALL"})}>
+        <div className='company'>
+        <NotificationRoundedNumber>8</NotificationRoundedNumber>
         <img src="https://cdn-icons-png.flaticon.com/512/512/512211.png" alt="account image" />
         </div>
-      </div>
-     
+     </SidebarLink>
       
-    </div>
-     
-     <div style={{display:sidebarSelect.display1}} className="extrasidebar">
     
-        <div className="extrasidebar-link">
+
+    </Sidebar>
+
+    
+  
+     <ExtraSidebar  display={sidebarSelect.display1}>
+      <div className="extrasidebar-link">
         <div 
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
@@ -216,8 +227,9 @@ const SideBar = () => {
         </div>
            
          <div className="extrasidebar-link">
-        <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
+         <div className={`extraLink ${ extrasidebarSelect.display2==='block'? 'extrasidebarRed':''}`}
          onClick={()=>extraDispatch({type:"OPEN2CLOSEALL"})}>
+         
           <i className="fa-solid fa-arrow-trend-up me-2"></i><p>SUMMARY </p>{extrasidebarSelect.display2==='block'?<i className="fa-solid fa-minus sign"></i> :<i className="fa-solid fa-plus sign"></i>}
          </div>
         
@@ -297,13 +309,15 @@ const SideBar = () => {
      
         </div>
           
-        
-      
-      </div>
+
+     </ExtraSidebar>
+     
+
+
 
 
       
-      <div style={{display:sidebarSelect.display2}} className="extrasidebar">
+      <ExtraSidebar display={sidebarSelect.display2}>
        
 
         <div className="extrasidebar-link">
@@ -311,7 +325,7 @@ const SideBar = () => {
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
-          <i className="fa-solid fa-bell me-2"></i><p className='notificationText me-4'>NOTIFICATIONS </p>
+          <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span style={{margin:'0 10px'}}>{extrasidebarSelect.display1==='block'?  <i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus "></i>}</span> 
    
         </div>
         
@@ -406,17 +420,19 @@ const SideBar = () => {
         </ul>
      
         </div>
-      </div>
+      </ExtraSidebar>
 
 
-      <div style={{display:sidebarSelect.display3}} className="extrasidebar">
+
+
+      <ExtraSidebar display={sidebarSelect.display3}>
          <div className="extrasidebar-link">
         <div 
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
           <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>11</span>
-          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
+         
         </div>
         
         </div>
@@ -510,17 +526,17 @@ const SideBar = () => {
         </ul>
      
         </div>
-      </div>
+      </ExtraSidebar>
 
 
-      <div style={{display:sidebarSelect.display4}} className="extrasidebar">
+      <ExtraSidebar display={sidebarSelect.display4} >
         <div className="extrasidebar-link">
         <div 
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
           <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>21</span>
-          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
+        
         </div>
         
         </div>
@@ -614,20 +630,20 @@ const SideBar = () => {
         </ul>
      
         </div>
-      </div>
+      </ExtraSidebar>
 
 
 
 
 
-<div style={{display:sidebarSelect.display5}} className="extrasidebar">
+<ExtraSidebar display={sidebarSelect.display5}>
         <div className="extrasidebar-link">
         <div 
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
           <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>17</span>
-          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
+         
         </div>
         
         </div>
@@ -721,18 +737,18 @@ const SideBar = () => {
         </ul>
      
         </div>
-      </div>
+      </ExtraSidebar>
 
 
       
-<div style={{display:sidebarSelect.display6}} className="extrasidebar">
+<ExtraSidebar display={sidebarSelect.display6}>
         <div className="extrasidebar-link">
         <div 
         className={`extraLink ${ extrasidebarSelect.display1==='block'? 'extrasidebarRed':''}`}
         onClick={()=>extraDispatch({type:"OPEN1CLOSEALL"})}>
         
           <i className="fa-solid fa-bell me-2"></i><p className='notificationText'>NOTIFICATIONS </p><span className='notificationNumber'>8</span>
-          {/* {extrasidebarSelect.display1==='block'?<i className="fa-solid fa-minus "></i> :<i className="fa-solid fa-plus"></i>} */}
+        
         </div>
         
         </div>
@@ -826,7 +842,7 @@ const SideBar = () => {
         </ul>
      
         </div>
-      </div>
+      </ExtraSidebar>
 </div>
   )
 }

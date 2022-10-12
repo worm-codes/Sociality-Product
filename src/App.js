@@ -1,6 +1,6 @@
 
 import './stylesheets/App.css';
-import './stylesheets/sidebar.css'
+import './stylesheets/extrasidebar.css'
 import './stylesheets/Header.css'
 import  './stylesheets/profilePic.css'
 import {datanew} from './helper/datanew'
@@ -55,13 +55,13 @@ function App() {
       let dateToSend=`${day} ${month} ${year}`
 
       return<div  className='contentWithDate'>
- <div className='datePosts'>{dateToSend}</div> 
-    <div className="items">
-    { 
-      postwithDate[idx].map((insideElement)=>{
-      return <Media data={insideElement} date={dateToSend}
-     />
-    })}
+        <div className='datePosts'>{dateToSend}</div> 
+           <div className="items">
+         { 
+            postwithDate[idx].map((insideElement)=>{
+            return <Media data={insideElement} date={dateToSend}
+          />
+           })}
     </div>
     </div>
 
